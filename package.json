@@ -1,0 +1,25 @@
+{
+  "name": "brhain-migration",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "diagnose": "node --env-file-if-exists=.env src/cli.js",
+    "pilot": "node --env-file-if-exists=.env src/pilot.js",
+    "brh:diagnostico": "node src/workflow.js diagnose",
+    "brh:importar": "node src/workflow.js import",
+    "core:diagnostico": "node src/workflow.js diagnose --flow core",
+    "core:importar": "node src/workflow.js import --flow core",
+    "sequences:planejar": "node src/sequences.js plan",
+    "sequences:ajustar": "node src/sequences.js apply",
+    "test": "node --test"
+  },
+  "dependencies": {
+    "mssql": "^12.0.0",
+    "pg": "^8.16.3",
+    "pg-copy-streams": "^7.0.0"
+  }
+}
